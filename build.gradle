@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+
+    }
+
+    def rootDir = buildscript.sourceFile.parentFile
+
+    subprojects {
+
+        ext {
+            dependencyManagementPlugin = "1.0.9.RELEASE"
+            springBootVersion = "2.2.6.RELEASE"
+            springCloudVersion = "Hoxton.SR4"
+            lombokVersion = "1.18.12"
+        }
+
+        apply plugin: 'java'
+
+        compileJava {
+            sourceCompatibility = "1.8"
+            targetCompatibility = "1.8"
+            options.encoding = 'UTF-8'
+        }
+
+        group = 'by.sws.udfl'
+        version = '0.1-SNAPSHOT'
+
+        compileJava.dependsOn processResources
+
+        buildscript {
+            repositories {
+                mavenCentral()
+                jcenter()
+            }
+            dependencies {
+                classpath("io.spring.gradle:dependency-management-plugin:${dependencyManagementPlugin}")
+            }
+        }
+
+        repositories {
+            mavenCentral()
+            jcenter()
+        }
+
+        dependencies {
+            compileOnly 'org.projectlombok:lombok:1.18.12'
+            annotationProcessor 'org.projectlombok:lombok:1.18.12'
+        }
+    }
+}

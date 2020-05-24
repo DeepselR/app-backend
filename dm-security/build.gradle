@@ -1,0 +1,7 @@
+apply from: "$rootDir/gradle/starter.gradle"
+
+dependencies {
+    compile project(':dm-postgre')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+}

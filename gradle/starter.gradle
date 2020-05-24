@@ -1,0 +1,12 @@
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    compile project(':dm-shared')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion"
+    }
+}

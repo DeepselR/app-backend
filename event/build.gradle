@@ -1,0 +1,5 @@
+apply from: "$rootDir/gradle/starter.gradle"
+
+dependencies {
+    compile project(':dm-security')
+}
