@@ -1,6 +1,6 @@
 package com.app.security.service.impl;
 
-import com.app.postgre.model.JUser;
+import com.app.postgre.entity.JUser;
 import com.app.postgre.service.UserService;
 import com.app.security.model.JUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;

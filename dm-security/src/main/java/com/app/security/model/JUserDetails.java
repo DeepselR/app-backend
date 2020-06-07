@@ -1,6 +1,6 @@
 package com.app.security.model;
 
-import com.app.postgre.model.JUser;
+import com.app.postgre.entity.JUser;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -46,7 +46,7 @@ public class JUserDetails implements UserDetails {
 
   @Override
   public String getUsername() {
-    return userData.getName();
+    return userData.getEmail();
   }
 
   @Override

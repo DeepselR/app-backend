@@ -1,10 +1,8 @@
 package com.app.postgre.service;
 
-import com.app.postgre.model.JUser;
+import com.app.postgre.entity.JUser;
 
-public interface UserService {
-
-  JUser save(JUser JUser);
+public interface UserService extends DataService<JUser> {
 
   JUser getUserByName(String name);
 
