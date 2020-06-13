@@ -2,7 +2,7 @@ package com.app.postgre.service;
 
 import com.app.postgre.entity.JUser;
 
-public interface UserService extends DataService<JUser> {
+public interface UserDataService extends DataService<JUser> {
 
   JUser getUserByName(String name);
 

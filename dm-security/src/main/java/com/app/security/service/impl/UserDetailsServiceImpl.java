@@ -1,7 +1,7 @@
 package com.app.security.service.impl;
 
 import com.app.postgre.entity.JUser;
-import com.app.postgre.service.UserService;
+import com.app.postgre.service.UserDataService;
 import com.app.security.model.JUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -15,11 +15,11 @@ import org.springframework.stereotype.Service;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
   @Autowired
-  private UserService userService;
+  private UserDataService userDataService;
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    JUser jUser = userService.getUserByEmail(username);
+    JUser jUser = userDataService.getUserByEmail(username);
     return new JUserDetails(jUser);
   }
 }

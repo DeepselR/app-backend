@@ -1,0 +1,23 @@
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    auth:
+      path: /auth/**
+      serviceId: auth
+    event:
+      path: /event/**
+      serviceId: event
+
+auth:
+  ribbon:
+    listOfServers: http://localhost:8090
+event:
+  ribbon:
+    listOfServers: http://localhost:8100
+
+ribbon:
+  eureka:
+    enabled: false
+
+server:
+  port: 8080

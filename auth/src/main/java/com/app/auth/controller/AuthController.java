@@ -4,7 +4,7 @@ import com.app.auth.model.AuthRequest;
 import com.app.auth.model.AuthResponse;
 import com.app.auth.model.RegisterRequest;
 import com.app.postgre.entity.JUser;
-import com.app.postgre.service.UserService;
+import com.app.postgre.service.UserDataService;
 import com.app.postgre.standart.Role;
 import com.app.security.util.JsonWebTokenService;
 import com.app.shared.constants.RestPoints;
@@ -36,7 +36,7 @@ public class AuthController {
   private UserDetailsService userDetailsService;
 
   @Autowired
-  private UserService userService;
+  private UserDataService userDataService;
 
   @Autowired
   private JsonWebTokenService jsonWebTokenService;
@@ -60,7 +60,7 @@ public class AuthController {
 
   @PostMapping(value = RestPoints.REGISTER, produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Long> register(@RequestBody @Valid RegisterRequest request) throws AuthenticationException {
-    JUser existUser = userService.getUserByEmail(request.getEmail());
+    JUser existUser = userDataService.getUserByEmail(request.getEmail());
     if (Objects.nonNull(existUser)) {
       throw new CustomException(HttpStatus.CONFLICT, "User with that email already exists");
     }
@@ -69,7 +69,7 @@ public class AuthController {
     user.setEmail(request.getEmail());
     user.setPassword(encoder.encode(request.getPassword()));
     user.setRole(Role.USER);
-    JUser saved = userService.save(user);
+    JUser saved = userDataService.save(user);
     return ResponseEntity.ok(saved.getId());
   }
 

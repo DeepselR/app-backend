@@ -11,6 +11,6 @@ spring:
     password: postgres
 
 #drop and create table again, good for testing, comment this in production
-#  jpa:
-#    hibernate:
-#      ddl-auto: create
+  jpa:
+    hibernate:
+      ddl-auto: create

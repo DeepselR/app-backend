@@ -1,8 +1,12 @@
 package com.app.shared.constants;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 /**
  * Shared end-points constants.
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RestPoints {
 
   /**

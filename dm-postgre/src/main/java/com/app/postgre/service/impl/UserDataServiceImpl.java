@@ -2,15 +2,15 @@ package com.app.postgre.service.impl;
 
 import com.app.postgre.entity.JUser;
 import com.app.postgre.repository.UserRepository;
-import com.app.postgre.service.UserService;
+import com.app.postgre.service.UserDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl extends AbstractDataServiceImpl<JUser, UserRepository> implements UserService {
+public class UserDataServiceImpl extends AbstractDataServiceImpl<JUser, UserRepository> implements UserDataService {
 
   @Autowired
-  public UserServiceImpl(UserRepository repository) {
+  public UserDataServiceImpl(UserRepository repository) {
     super(repository);
   }
 

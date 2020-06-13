@@ -4,6 +4,7 @@ import com.app.postgre.entity.JUser;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class JUserDetails implements UserDetails {
 
   @Setter
+  @Getter
   private JUser userData;
 
   private boolean accountNonExpired;

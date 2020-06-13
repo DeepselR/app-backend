@@ -9,7 +9,7 @@ import org.springframework.data.repository.NoRepositoryBean;
 public interface CommonRepository<E extends AbstractEntity> extends CrudRepository<E, Long> {
 
   @Override
-  Optional<E> findById(Long aLong);
+  Optional<E> findById(Long id);
 
   @Override
   <S extends E> S save(S entity);
