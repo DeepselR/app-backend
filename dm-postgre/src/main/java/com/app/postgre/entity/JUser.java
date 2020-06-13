@@ -1,6 +1,7 @@
 package com.app.postgre.entity;
 
 import com.app.postgre.standart.Role;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,6 +40,7 @@ public class JUser extends AbstractEntity {
           @JoinColumn(name = "event_id", referencedColumnName = "id")
       }
   )
+  @JsonManagedReference
   private Set<Event> events;
 
 }

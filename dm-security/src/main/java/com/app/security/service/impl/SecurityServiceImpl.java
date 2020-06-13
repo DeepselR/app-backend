@@ -17,7 +17,7 @@ public class SecurityServiceImpl implements SecurityService {
 
 
   private JUserDetails getUserDetails() {
-    return (JUserDetails) getAuthentication().getDetails();
+    return (JUserDetails) getAuthentication().getPrincipal();
   }
 
   private Authentication getAuthentication() {
