@@ -34,5 +34,4 @@ public abstract class AbstractDataServiceImpl<E extends AbstractEntity, R extend
     return repository.findById(id);
   }
 
-  //другие методы, переопределённые из интерфейса
 }
